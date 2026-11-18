@@ -1,0 +1,187 @@
+
+/* Main Navbar */
+
+.navbar {
+  width: 100%;
+  min-height: 80px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Navbar bar */
+
+.navbar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.navbar__title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #003b71;
+  white-space: nowrap;
+}
+
+/* Navigation links */
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.navbar__menu a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  transition: 0.3s;
+}
+
+.navbar__menu a:hover {
+  color: #007bff;
+}
+
+/* Toggle button */
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #003b71;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 992px) {
+
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .navbar__title {
+    font-size: 18px;
+  }
+
+  .navbar__menu {
+    gap: 20px;
+  }
+
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    min-height: 75px;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar__bar {
+    width: 100%;
+    min-height: 75px;
+  }
+
+  .navbar__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar__title {
+    font-size: 16px;
+  }
+
+  /* Show hamburger */
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  /* Mobile dropdown */
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffffff;
+  }
+
+  .navbar__menu.is-open {
+    display: flex;
+  }
+
+  .navbar__menu a {
+    width: 100%;
+    padding: 14px 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 15px;
+  }
+
+}
+
+/* Small Mobile */
+
+@media screen and (max-width: 480px) {
+
+  .navbar {
+    padding: 10 12px;
+  }
+
+  .navbar__title {
+    font-size: 13px;
+  }
+
+  .navbar__logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .navbar__brand {
+    gap: 7px;
+  }
+
+  .navbar__toggle span {
+    width: 23px;
+  }
+
+}

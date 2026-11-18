@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap");
+
+.hero {
+  --hero-blue: #1a2aa8;
+  --hero-accent: #0a2fa0;
+  --hero-ink: #111111;
+  --hero-text: #5b5f6b;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 130px;
+  background: #ffffff;
+  font-family: "Outfit", "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.hero *,
+.hero *::before,
+.hero *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Text ---------- */
+.hero__content {
+  flex: 1 1 55%;
+  max-width: 900px;
+}
+
+.hero__title {
+  margin: 0;
+  max-width: 14em;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--hero-blue);
+}
+
+.hero__text {
+  margin: 28px 0 0;
+  max-width: 920px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--hero-text);
+}
+
+/* ---------- Illustration ---------- */
+.hero__art {
+  flex: 0 1 420px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+/* svg helper classes */
+.hero__svg .ln,
+.hero__svg .ln-box,
+.hero__svg .ln-thick,
+.hero__svg .ln-dash {
+  fill: none;
+  stroke: var(--hero-ink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero__svg .ln,
+.hero__svg .ln-box {
+  stroke-width: 1.4;
+}
+
+.hero__svg .ln-box {
+  fill: #fff;
+}
+
+.hero__svg .ln-thick {
+  stroke-width: 2;
+}
+
+.hero__svg .ln-dash {
+  stroke: #8a8a8a;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.hero__svg .ln-white {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.hero__svg .fill-blue {
+  fill: var(--hero-accent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 60px 60px;
+  }
+  .hero__title {
+    font-size: 52px;
+  }
+  .hero__text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 24px;
+  }
+  .hero__title {
+    font-size: 38px;
+  }
+  .hero__text {
+    font-size: 17px;
+  }
+  .hero__art {
+    align-self: center;
+    width: 100%;
+    max-width: 360px;
+  }
+}

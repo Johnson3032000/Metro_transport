@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap");
+
+.catalog {
+  --catalog-blue: #1a2aa8;
+  --catalog-text: #5b5f6b;
+
+  background: #ffffff;
+  font-family: "Outfit", "Segoe UI", Arial, sans-serif;
+}
+
+.catalog__title {
+  font-size: 56px;
+  line-height: 1.1;
+  color: var(--catalog-blue);
+}
+
+.catalog__text {
+  max-width: 900px;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--catalog-text);
+}
+
+/* Three photos joined into one rounded strip */
+.catalog__strip {
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.catalog__img {
+  width: 0;               /* lets flex-fill split the width evenly */
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.catalog__img + .catalog__img {
+  border-left: 1px solid #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .catalog__title {
+    font-size: 46px;
+  }
+  .catalog__text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog__title {
+    font-size: 36px;
+  }
+  .catalog__text {
+    font-size: 17px;
+  }
+  .catalog__strip {
+    height: 130px;
+  }
+}
