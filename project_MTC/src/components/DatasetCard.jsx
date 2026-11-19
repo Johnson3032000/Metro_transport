@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FiFileText, FiCalendar, FiHardDrive, FiDownload } from "react-icons/fi";
 import "./DatasetCard.css";
 import { useData } from "./Fetchdatad";
+import { useTheme } from "./ThemeContext";
 
 const defaultDataset = {
   title: "Chennai Metro (CMRL)",
@@ -28,16 +29,20 @@ const defaultDataset = {
 
 const DatasetCard = ({ dataset = defaultDataset }) => {
    const data = useData();
+   const { theme, toggleTheme } = useTheme();
+   
   const { title, description, updated, size, files, downloadUrl } = dataset;
 
   return (
 
-    <div>
+    <div style={{backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white", borderRadius:"10px"}}>
 
       {
         data.map((item,index)=> (
 
-      <article key={index} style={{ border: `5px solid ${item.color}`}} className="dcard my-3 row g-0 mx-0">
+      <article  key={index} style={{ backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white", borderRadius:"10px", border: `5px solid ${item.color}`}} className="dcard my-3 row g-0 mx-0">
       {/* Left: details */}
       <div className="col-12 col-lg-8 dcard__main">
         <h3 className="dcard__title">{item.name}</h3>

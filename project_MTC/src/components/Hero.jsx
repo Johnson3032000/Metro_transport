@@ -1,5 +1,7 @@
 import React from "react";
 import "./Hero.css";
+import { useTheme } from "./ThemeContext";
+
 
 const CityIllustration = () => (
   <svg
@@ -135,8 +137,10 @@ const CityIllustration = () => (
 );
 
 const Hero = () => {
+    const { theme, toggleTheme } = useTheme();
   return (
-    <section className="hero">
+    <section className="hero" style={{ backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white",}}>
       <div className="hero__content">
         <h1 className="hero__title">
           The Open Data Backbone for Chennai’s Mobility.

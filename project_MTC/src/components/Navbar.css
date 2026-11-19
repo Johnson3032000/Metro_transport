@@ -1,5 +1,7 @@
 
-/* Main Navbar */
+/* =====================================
+   MAIN NAVBAR
+===================================== */
 
 .navbar {
   width: 100%;
@@ -8,13 +10,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+
+  background-color: var(--navbar-bg, #ffffff);
+  color: var(--text-color, #222222);
+
+  border-bottom: 1px solid var(--border-color, #dddddd);
+
   box-sizing: border-box;
   position: relative;
   z-index: 1000;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar bar */
+
+/* =====================================
+   NAVBAR BAR
+===================================== */
 
 .navbar__bar {
   display: flex;
@@ -22,7 +34,10 @@
   justify-content: space-between;
 }
 
-/* Brand */
+
+/* =====================================
+   BRAND
+===================================== */
 
 .navbar__brand {
   display: flex;
@@ -40,11 +55,14 @@
 .navbar__title {
   font-size: 21px;
   font-weight: 700;
-  color: #003b71;
+  color: var(--heading-color, #003b71);
   white-space: nowrap;
 }
 
-/* Navigation links */
+
+/* =====================================
+   NAVIGATION LINKS
+===================================== */
 
 .navbar__menu {
   display: flex;
@@ -56,15 +74,45 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  color: #222;
-  transition: 0.3s;
+
+  color: var(--text-color, #222222);
+
+  transition: color 0.3s ease;
 }
 
 .navbar__menu a:hover {
-  color: #007bff;
+  color: var(--link-color, #007bff);
 }
 
-/* Toggle button */
+
+/* =====================================
+   THEME BUTTON
+===================================== */
+
+.theme-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+
+ 
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* =====================================
+   HAMBURGER TOGGLE
+===================================== */
 
 .navbar__toggle {
   display: none;
@@ -79,12 +127,17 @@
   width: 26px;
   height: 3px;
   margin: 5px 0;
-  background-color: #003b71;
+
+  background-color: var(--heading-color, #003b71);
+
   border-radius: 3px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Tablet */
+
+/* =====================================
+   TABLET
+===================================== */
 
 @media screen and (max-width: 992px) {
 
@@ -100,9 +153,17 @@
     gap: 20px;
   }
 
+  .theme-button {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
 }
 
-/* Mobile */
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media screen and (max-width: 768px) {
 
@@ -140,9 +201,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+
     width: 100%;
     padding: 10px 0;
-    background-color: #ffffff;
+
+    background-color: var(--navbar-bg, #ffffff);
   }
 
   .navbar__menu.is-open {
@@ -153,18 +216,30 @@
     width: 100%;
     padding: 14px 5px;
     box-sizing: border-box;
-    border-bottom: 1px solid #eeeeee;
+
+    border-bottom: 1px solid var(--border-color, #eeeeee);
+
     font-size: 15px;
+  }
+
+  /* Theme button on mobile */
+
+  .theme-button {
+    margin: 10px 0 15px;
+    align-self: flex-start;
   }
 
 }
 
-/* Small Mobile */
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
 
 @media screen and (max-width: 480px) {
 
   .navbar {
-    padding: 10 12px;
+    padding: 10px 12px;
   }
 
   .navbar__title {

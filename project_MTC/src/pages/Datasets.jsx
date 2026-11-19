@@ -1,11 +1,16 @@
 import DataCatalog from "../components/DataCatalog";
 import DatasetCard from "../components/DatasetCard";
 import Footer from "../components/Footer";
+import { useTheme } from "../components/ThemeContext";
 
 
 export default function Datasets() {
+    
+  const { theme, toggleTheme } = useTheme();
+  
   return (
-    <div>
+    <div style={{backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white",}}>
 
 
       {/* <div style={{display:"flex"}}>
@@ -26,7 +31,8 @@ export default function Datasets() {
 
       <DataCatalog/>
 
-      <div style={{backgroundColor:"#E0F2FE", borderRadius:"10px"}} className="px-3 py-3 mx-5">
+      <div style={{backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white", borderRadius:"10px"}} className="px-3 py-3 mx-5">
         Note: The data is licensed under the Government Open Data License – India (GODL).
 
       </div>

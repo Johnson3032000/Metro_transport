@@ -3,6 +3,11 @@
   import { Link } from "react-router-dom";
   import "./Navbar.css";
   import nav_img from "../assets/cumta_logo.png";
+  import { useTheme } from "./ThemeContext";
+  import { MdOutlineDarkMode } from "react-icons/md";
+  import { GoSun } from "react-icons/go";
+
+
 
   const links = [
     { label: "Home", href: "/" },
@@ -12,9 +17,12 @@
 
   const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
+
 
     return (
-      <header style={{display:"flex", justifyContent:"space-around", padding:"0px 0px"}} className="navbar">
+      <header style={{display:"flex", justifyContent:"space-around", padding:"0px 0px",  backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white",}} className="navbar">
 
         <div style={{width:"50%"}} className="navbar__bar">
 
@@ -58,7 +66,13 @@
               {l.label}
             </Link>
           ))}
+                <button onClick={toggleTheme} style={{ fontSize:"20px", backgroundColor: theme === "light" ? "#363636" : "white",
+        color: theme === "light" ? "white" : "black"}} className="theme-button">
+        {theme === "light" ? <  MdOutlineDarkMode/> : <GoSun/> }
+      </button>
         </nav>
+
+
 
       </header>
     );

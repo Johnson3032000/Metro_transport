@@ -28,7 +28,7 @@ function AgencyCards() {
         alignItems: "flex-start",
         width: "100%",
         padding: "25px 20px",
-        backgroundColor: "#ffffff",
+       
         flexWrap: "wrap",
         gap: "30px"
       }}

@@ -1,6 +1,6 @@
-
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from app.database import Base
+
 
 class MetroLine(Base):
 

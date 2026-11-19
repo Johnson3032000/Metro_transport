@@ -380,3 +380,45 @@
   }
 
 }
+
+
+
+
+/* LIGHT MODE */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --section-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --heading-color: #111827;
+  --paragraph-color: #555555;
+  --border-color: #dddddd;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --section-bg: #1a1a1a;
+  --card-bg: #242424;
+  --heading-color: #ffffff;
+  --paragraph-color: #cccccc;
+  --border-color: #444444;
+}
+
+/* GLOBAL THEME */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

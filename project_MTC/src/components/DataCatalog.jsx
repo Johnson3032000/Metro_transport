@@ -1,11 +1,14 @@
 import React from "react";
 import "./DataCatalog.css";
 import dataCatalog from '../assets/multimodeltransport.jpg'
+import { useTheme } from "./ThemeContext";
 
 
 const DataCatalog = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <section className="catalog py-5">
+    <section style={{backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white"}} className="catalog py-5">
       <div className="container-xxl">
         <div className="row align-items-center g-4 g-lg-5">
           {/* Text */}

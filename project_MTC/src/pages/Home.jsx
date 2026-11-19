@@ -5,12 +5,16 @@ import AgencyCards from "../components/AgencyCards";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useTheme } from "../components/ThemeContext";
 
 function Home() {
 
   const [count, setCount] = useState(0);
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
+  const { theme, toggleTheme } = useTheme();
+  
   const target = 1041;
   const Indexed_count = 500;
   const Transportation_Agencies = 3;
@@ -29,9 +33,18 @@ function Home() {
     }
   }, [count, target]);
 
+  const navigate = useNavigate();
+
+const handleLogin = () => {
+    // Perform any login logic here (API calls, validation, etc.)
+    
+    // 2. Navigate to the /dashboard route
+    navigate('/maps');
+  };
 
   return (
-    <div className="home-container" id="home">
+    <div style={{backgroundColor: theme === "light" ? "white" : "#363636",
+        color: theme === "light" ? "black" : "white",}} className="home-container" id="home">
 
         {/* <nav className="navbar">
 
@@ -90,7 +103,8 @@ function Home() {
 
 
       {/* STATISTICS SECTION */}
-      <section className="statistics-section">
+      <section style={{backgroundColor: theme === "light" ? "white" : "#0a0808",
+        color: theme === "light" ? "black" : "white",}} className="statistics-section">
 
         <div className="stat-card">
           <p>Total Indexed Routes</p>
@@ -111,9 +125,10 @@ function Home() {
 
 
       {/* FEATURES SECTION */}
-      <section className="features-section">
+      <section  className="features-section">
 
-        <div className="feature-card">
+        <div style={{backgroundColor: theme === "light" ? "white" : "#0a0808",
+        color: theme === "light" ? "black" : "white",}} className="feature-card">
 
           <h2>Interactive Network Map</h2>
 
@@ -121,13 +136,14 @@ function Home() {
             Explore multi-modal transit corridors,
             stop locations, and static schedule visualizations.
           </p>
-
-          <a href="#map">Launch Viewer →</a>
+          
+          <a style={{color:"#0038A8"}} onClick={handleLogin}>Log In & Go to Dashboard</a>
 
         </div>
 
 
-        <div className="feature-card">
+        <div style={{backgroundColor: theme === "light" ? "white" : "#0a0808",
+        color: theme === "light" ? "black" : "white",}} className="feature-card">
 
           <h2>Transportation Datasets</h2>
 
@@ -136,7 +152,7 @@ function Home() {
             station details, and other mobility information.
           </p>
 
-          <a href="#datasets">Explore Datasets →</a>
+          <a style={{color:"#0038A8"}} onClick={handleLogin}>Explore Datasets →</a>
 
         </div>
 
